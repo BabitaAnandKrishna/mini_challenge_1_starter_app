@@ -50,8 +50,14 @@ class MyTheme with ChangeNotifier {
       case ThemeType.Dark:
         return ThemeData(
            brightness: Brightness.dark,
+          fontFamily:'Parisienne' ,
           appBarTheme: AppBarTheme(
-            centerTitle:true,
+              centerTitle:true,
+              textTheme: TextTheme(headline6:  TextStyle(fontSize: 23,fontFamily: 'Parisienne',fontWeight: FontWeight.bold,))
+          ),
+          textTheme:  TextTheme(
+            bodyText1: TextStyle( fontWeight: FontWeight.normal,fontSize: 18),
+            subtitle1: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),
           ),
         );
       case ThemeType.Other:
