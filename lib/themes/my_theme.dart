@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class MyTheme with ChangeNotifier {
   var _themeType = ThemeType.Light;
@@ -35,12 +36,14 @@ class MyTheme with ChangeNotifier {
           primaryColor: Colors.lightBlue[100],
           accentColor: Colors.yellow,
           canvasColor: (Color(0xFFc4fb9c)).withOpacity(0.9),
+          fontFamily:'Parisienne' ,
           appBarTheme: AppBarTheme(
             centerTitle:true,
+            textTheme: TextTheme(headline6:  TextStyle(fontSize: 23,fontFamily: 'Parisienne',fontWeight: FontWeight.bold,).apply(color: Colors.blueAccent))
           ),
           textTheme:  TextTheme(
-            bodyText1: TextStyle(fontStyle: FontStyle.italic).apply(color: Colors.green),
-              subtitle1: TextStyle(fontStyle: FontStyle.normal ).apply(color: Colors.brown),
+            bodyText1: TextStyle(fontWeight: FontWeight.bold,fontSize: 18).apply(color: Colors.green),
+              subtitle1: TextStyle(fontWeight: FontWeight.bold,fontSize: 18).apply(color: Colors.brown),
           ),
 
         );
