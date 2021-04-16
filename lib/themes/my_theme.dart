@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyTheme with ChangeNotifier {
@@ -29,11 +30,33 @@ class MyTheme with ChangeNotifier {
   ThemeData get currentThemeData {
     switch (themeType) {
       case ThemeType.Light:
-        return ThemeData();
+        return ThemeData(
+          brightness: Brightness.light,
+          primaryColor: Colors.lightBlue[100],
+          accentColor: Colors.yellow,
+          canvasColor: (Color(0xFFc4fb9c)).withOpacity(0.9),
+          appBarTheme: AppBarTheme(
+            centerTitle:true,
+          ),
+          textTheme:  TextTheme(
+            bodyText1: TextStyle(fontStyle: FontStyle.italic).apply(color: Colors.green),
+              subtitle1: TextStyle(fontStyle: FontStyle.normal ).apply(color: Colors.brown),
+          ),
+
+        );
       case ThemeType.Dark:
-        return ThemeData();
+        return ThemeData(
+           brightness: Brightness.dark,
+          appBarTheme: AppBarTheme(
+            centerTitle:true,
+          ),
+        );
       case ThemeType.Other:
-        return ThemeData();
+        return ThemeData(
+          appBarTheme: AppBarTheme(
+            centerTitle:true,
+          ),
+        );
     }
   }
 }
